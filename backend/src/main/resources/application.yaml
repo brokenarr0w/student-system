@@ -1,0 +1,23 @@
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: dou9512357
+    url: jdbc:mysql://localhost:3306/student
+    hikari:
+      #     最小空闲连接数量
+      minimum-idle: 10
+      #     连接池最大连接数,默认是10
+      maximum-pool-size: 10
+      #     空闲连接最大生存时间
+      idle-timeout: 12000
+      #      连接超时时间
+      connection-timeout: 30000
+      connection-test-query: select 1
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8001
+
