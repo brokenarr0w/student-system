@@ -1,7 +1,8 @@
 import {createRouter,createWebHashHistory} from "vue-router";
 import Nprogress from "../config/nprogress.ts";
 //定义路由
-const routes = [{
+const routes = [
+    {
     path: '/',
     name: 'Login',
     meta: {
