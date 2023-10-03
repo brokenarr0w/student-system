@@ -1,0 +1,13 @@
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+/backend/.mvn/wrapper/maven-wrapper.jar
+!/.idea/misc.xml
+!/.idea/vcs.xml
+!/.idea/workspace.xml
+
