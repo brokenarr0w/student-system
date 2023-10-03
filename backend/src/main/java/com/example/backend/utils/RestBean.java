@@ -1,11 +1,14 @@
 package com.example.backend.utils;
 
+import lombok.Data;
+
 /**
  * @author 湛蓝之翼
  * @version 1.0
  * @description: 统一结果封装类
  * @date 2023/10/3 12:55
  */
+@Data
 public class RestBean {
     public static final int STATUS_SUCCESS = 200;
     public static final int STATUS_FALL = 500;
@@ -38,12 +41,12 @@ public class RestBean {
      * @param result  返回数据
      * @return
      */
-    private static BaseResult createResult(int status, String message, Object result) {
-        BaseResult baseResult = new BaseResult();
-        baseResult.setStatus(status);
-        baseResult.setMessage(message);
-        baseResult.setResult(result);
-        return baseResult;
+    private static RestBean createResult(int status, String message, Object result) {
+        RestBean RestBean = new RestBean();
+        RestBean.setStatus(status);
+        RestBean.setMessage(message);
+        RestBean.setResult(result);
+        return RestBean;
     }
 
     /**
@@ -51,8 +54,8 @@ public class RestBean {
      *
      * @return
      */
-    public static BaseResult success() {
-        return BaseResult.createResult(STATUS_SUCCESS, "成功", null);
+    public static RestBean success() {
+        return RestBean.createResult(STATUS_SUCCESS, "成功", null);
     }
 
     /**
@@ -61,8 +64,8 @@ public class RestBean {
      * @param message 返回消息
      * @return
      */
-    public static BaseResult success(String message) {
-        return BaseResult.createResult(STATUS_SUCCESS, message, null);
+    public static RestBean success(String message) {
+        return RestBean.createResult(STATUS_SUCCESS, message, null);
     }
 
     /**
@@ -71,8 +74,8 @@ public class RestBean {
      * @param result 返回数据
      * @return
      */
-    public static BaseResult success(Object result) {
-        return BaseResult.createResult(STATUS_SUCCESS, "成功", result);
+    public static RestBean success(Object result) {
+        return RestBean.createResult(STATUS_SUCCESS, "成功", result);
     }
 
     /**
@@ -82,8 +85,8 @@ public class RestBean {
      * @param result 返回数据
      * @return
      */
-    public static BaseResult success(String message, Object result) {
-        return BaseResult.createResult(STATUS_SUCCESS, message, result);
+    public static RestBean success(String message, Object result) {
+        return RestBean.createResult(STATUS_SUCCESS, message, result);
     }
 
     /**
@@ -91,8 +94,8 @@ public class RestBean {
      *
      * @return
      */
-    public static BaseResult fail() {
-        return BaseResult.createResult(STATUS_FALL, "失败", null);
+    public static RestBean fail() {
+        return RestBean.createResult(STATUS_FALL, "失败", null);
     }
 
     /**
@@ -101,8 +104,8 @@ public class RestBean {
      * @param message 返回消息
      * @return
      */
-    public static BaseResult fail(String message) {
-        return BaseResult.createResult(STATUS_FALL, message, null);
+    public static RestBean fail(String message) {
+        return RestBean.createResult(STATUS_FALL, message, null);
     }
 
     /**
@@ -112,7 +115,7 @@ public class RestBean {
      * @param result 返回数据
      * @return
      */
-    public static BaseResult fail(String message, Object result) {
-        return BaseResult.createResult(STATUS_FALL, message, result);
+    public static RestBean fail(String message, Object result) {
+        return RestBean.createResult(STATUS_FALL, message, result);
     }
 }
